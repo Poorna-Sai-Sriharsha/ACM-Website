@@ -227,6 +227,14 @@ p{ margin:0 0 1em; }
   background:var(--navy);
 }
 .slide.active{ display:block; animation:fadeIn .6s ease; }
+.slide.slide-banner{
+  background:#00167a;
+  align-items:center;
+  justify-content:center;
+}
+.slide.slide-banner.active{
+  display:flex;
+}
 @keyframes fadeIn{ from{opacity:0;} to{opacity:1;} }
 .slide img{
   width:100%;
@@ -234,6 +242,20 @@ p{ margin:0 0 1em; }
   object-fit:cover;
   opacity:.55;
 }
+.slide.slide-banner img{
+  width:100%;
+  height:400px;
+  object-fit:contain;
+  object-position:center;
+  opacity:1;
+}
+@media (max-width:768px){
+  .slide, .slide img, .slide.slide-banner img{ height:280px; }
+}
+@media (max-width:480px){
+  .slide, .slide img, .slide.slide-banner img{ height:200px; }
+}
+
 .slide-caption{
   position:absolute; inset:0;
   display:flex;
@@ -315,7 +337,24 @@ p{ margin:0 0 1em; }
 }
 .info-card p, .info-card li {
   text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 12px;
+  line-height: 1.65;
 }
+.info-card.mission-card p,
+.info-card.mission-card li {
+  text-align: left;
+}
+.info-card p:last-child, .info-card li:last-child {
+  margin-bottom: 0;
+}
+.info-card ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
 
 /* ============================================================
    ABOUT ACM
@@ -425,7 +464,7 @@ table.data-table td.placeholder{ color:var(--ink-soft); font-style:italic; }
    ============================================================ */
 .members-list{
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
   gap:16px;
   margin-top:18px;
 }
@@ -440,17 +479,18 @@ table.data-table td.placeholder{ color:var(--ink-soft); font-style:italic; }
   box-shadow:var(--shadow-sm);
 }
 .member-card .avatar{
-  width:46px;height:46px;
+  width:50px;height:50px;
   border-radius:50%;
   background:var(--navy);
   color:var(--white);
   display:flex;align-items:center;justify-content:center;
   font-family:var(--font-display);
   font-weight:700;
+  font-size:1.1rem;
   flex:none;
 }
-.member-card .name{ font-weight:700; color:var(--navy); font-size:.96rem; }
-.member-card .role{ font-size:.8rem; color:var(--ink-soft); }
+.member-card .name{ font-weight:700; color:var(--navy); font-size:1.1rem; }
+.member-card .role{ font-size:.92rem; color:var(--ink-soft); }
 
 /* ============================================================
    EVENTS
@@ -703,21 +743,21 @@ table.data-table td.placeholder{ color:var(--ink-soft); font-style:italic; }
 @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; } }
 .contact-item{
   display:flex;
-  gap:16px;
+  gap:20px;
   align-items:flex-start;
-  margin-bottom:22px;
+  margin-bottom:26px;
 }
 .contact-item .icon{
-  width:44px;height:44px;
+  width:56px;height:56px;
   border-radius:50%;
   background:var(--blue-soft);
   color:var(--blue);
   display:flex;align-items:center;justify-content:center;
   flex:none;
-  font-size:1.1rem;
+  font-size:1.5rem;
 }
-.contact-item h4{ margin:0 0 4px; font-size:1rem; color:var(--navy); font-family:var(--font-body); font-weight:700; }
-.contact-item p{ margin:0; color:var(--ink-soft); font-size:.92rem; }
+.contact-item h4{ margin:0 0 6px; font-size:1.45rem; color:var(--navy); font-family:var(--font-body); font-weight:700; }
+.contact-item p{ margin:0; color:var(--ink); font-size:1.25rem; line-height:1.6; }
 .map-frame{
   width:100%;
   min-height:340px;
