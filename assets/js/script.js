@@ -66,23 +66,54 @@ document.addEventListener('DOMContentLoaded', function () {
   var subView      = document.getElementById('events-sub-view');
   var subViewTitle = document.getElementById('sub-view-title');
 
-  masterCards.forEach(function (card) {
-    card.addEventListener('click', function () {
-      if (!subView || !masterView) return;
-      masterView.style.display = 'none';
-      subView.style.display = 'block';
-      if (subViewTitle) subViewTitle.textContent = card.getAttribute('data-open-master');
-      window.scrollTo({ top: subView.offsetTop - 90, behavior: 'smooth' });
-    });
-  });
+  function showSubView(title) {
+    if (!subView || !masterView) return;
+    masterView.style.display = 'none';
+    subView.style.display = 'block';
+    if (subViewTitle && title) subViewTitle.textContent = title;
+  }
 
-  var backToMaster = document.getElementById('back-to-master');
-  backToMaster && backToMaster.addEventListener('click', function (e) {
-    e.preventDefault();
+  function showMasterView() {
+    if (!subView || !masterView) return;
     subView.style.display = 'none';
     masterView.style.display = 'block';
-    window.scrollTo({ top: masterView.offsetTop - 90, behavior: 'smooth' });
-  });
+  }
+
+  function checkHashAndToggle() {
+    if (!masterView || !subView) return;
+    var hash = window.location.hash.toLowerCase();
+    if (hash === '#technizen') {
+      showSubView('TECHNIZEN');
+    } else {
+      showMasterView();
+    }
+  }
+
+  if (masterView && subView) {
+    checkHashAndToggle();
+    window.addEventListener('hashchange', checkHashAndToggle);
+    window.addEventListener('popstate', checkHashAndToggle);
+    window.addEventListener('pageshow', checkHashAndToggle);
+
+    masterCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        var masterName = card.getAttribute('data-open-master') || 'TECHNIZEN';
+        showSubView(masterName);
+        window.location.hash = masterName.toLowerCase();
+        window.scrollTo({ top: subView.offsetTop - 90, behavior: 'smooth' });
+      });
+    });
+
+    var backToMaster = document.getElementById('back-to-master');
+    backToMaster && backToMaster.addEventListener('click', function (e) {
+      e.preventDefault();
+      showMasterView();
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname + window.location.search);
+      }
+      window.scrollTo({ top: masterView.offsetTop - 90, behavior: 'smooth' });
+    });
+  }
 
   /* ---------- Event detail modal ---------- */
   var modalBackdrop = document.getElementById('event-modal');
