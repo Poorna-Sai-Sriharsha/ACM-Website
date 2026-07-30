@@ -534,11 +534,24 @@ table.data-table td.placeholder{ color:var(--ink-soft); font-style:italic; }
   background:linear-gradient(180deg, rgba(11,31,77,.15) 0%, rgba(7,20,51,.9) 100%);
   display:flex;
   flex-direction:column;
-  justify-content:flex-end;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
   padding:22px;
+  transition:opacity .25s ease;
 }
+.event-master-hover-overlay{
+  position:absolute; inset:0;
+  background:rgba(11,31,77,.82);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transition:opacity .25s ease;
+}
+.event-master-card:hover .event-master-hover-overlay{ opacity:1; }
+.event-master-card:hover .event-master-overlay{ opacity:0; }
 .event-master-overlay .tag{
-  align-self:flex-start;
   background:var(--gold);
   color:var(--navy-dark);
   font-size:.7rem;
