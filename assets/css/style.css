@@ -498,8 +498,8 @@ table.data-table td.placeholder{ color:var(--ink-soft); font-style:italic; }
   gap:26px;
 }
 .event-master-grid .event-master-card:not(.placeholder-slot){
-  width: min(560px, 90vw);
-  min-height: 380px;
+  width: min(960px, 90vw);
+  min-height: 460px;
   flex-shrink: 0;
 }
 .event-master-card{
