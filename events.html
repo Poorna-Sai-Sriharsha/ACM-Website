@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Events | ACM Student Chapter — Dept. of CSE, RVRJC</title>
+<title>Events | ACM Student Chapter â€” Dept. of CSE, RVRJC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -11,7 +11,7 @@
 <body>
 
 <div class="top-banner">
-  <img src="assets/images/college-banner.png" alt="R.V.R. & J.C. College of Engineering — EAPCET Code: RVJC">
+  <img src="assets/images/college-banner.png" alt="R.V.R. & J.C. College of Engineering â€” EAPCET Code: RVJC">
 </div>
 
 <nav class="main-nav">
@@ -62,12 +62,7 @@
         </div>
       </div>
 
-      <!-- Placeholder slots for future events — 5 more to be added -->
-      <div class="event-master-card placeholder-slot">Upcoming Event — To Be Announced</div>
-      <div class="event-master-card placeholder-slot">Upcoming Event — To Be Announced</div>
-      <div class="event-master-card placeholder-slot">Upcoming Event — To Be Announced</div>
-      <div class="event-master-card placeholder-slot">Upcoming Event — To Be Announced</div>
-      <div class="event-master-card placeholder-slot">Upcoming Event — To Be Announced</div>
+
 
     </div>
   </div>
@@ -86,236 +81,75 @@
     <div class="subevent-grid">
 
       <!-- 1. Query Masters -->
-      <div class="subevent-card">
-        <div class="img-placeholder">Query Masters — Image</div>
+      <a class="subevent-card" href="event-query-masters.html">
+        <img src="assets/images/query.jpeg" alt="Query Masters">
         <div class="subevent-label">Query Masters</div>
         <div class="subevent-overlay">
-          <button class="btn" data-view-details="tpl-query-masters">View Details</button>
+          <span class="btn">View Details</span>
         </div>
-      </div>
+      </a>
 
       <!-- 2. DSA Clash -->
-      <div class="subevent-card">
-        <div class="img-placeholder">DSA Clash — Image</div>
+      <a class="subevent-card" href="event-dsa-clash.html">
+        <img src="assets/images/dsa.jpeg" alt="DSA Clash">
         <div class="subevent-label">DSA Clash</div>
         <div class="subevent-overlay">
-          <button class="btn" data-view-details="tpl-dsa-clash">View Details</button>
+          <span class="btn">View Details</span>
         </div>
-      </div>
+      </a>
 
       <!-- 3. AI Innovators Arena -->
-      <div class="subevent-card">
-        <div class="img-placeholder">AI Innovators Arena — Image</div>
+      <a class="subevent-card" href="event-ai-innovators.html">
+        <img src="assets/images/ai.jpeg" alt="AI Innovators Arena">
         <div class="subevent-label">AI Innovators Arena</div>
         <div class="subevent-overlay">
-          <button class="btn" data-view-details="tpl-ai-innovators">View Details</button>
+          <span class="btn">View Details</span>
         </div>
-      </div>
+      </a>
 
       <!-- 4. Pixel Craft -->
-      <div class="subevent-card">
-        <div class="img-placeholder">Pixel Craft — Image</div>
+      <a class="subevent-card" href="event-pixel-craft.html">
+        <img src="assets/images/pixel.jpeg" alt="Pixel Craft">
         <div class="subevent-label">Pixel Craft</div>
         <div class="subevent-overlay">
-          <button class="btn" data-view-details="tpl-pixel-craft">View Details</button>
+          <span class="btn">View Details</span>
         </div>
-      </div>
+      </a>
 
       <!-- 5. Build and Pitch -->
-      <div class="subevent-card">
-        <div class="img-placeholder">Build and Pitch — Image</div>
+      <a class="subevent-card" href="event-build-pitch.html">
+        <img src="assets/images/build.jpeg" alt="Build and Pitch">
         <div class="subevent-label">Build and Pitch</div>
         <div class="subevent-overlay">
-          <button class="btn" data-view-details="tpl-build-pitch">View Details</button>
+          <span class="btn">View Details</span>
         </div>
-      </div>
+      </a>
 
       <!-- 6. Research Symposium -->
-      <div class="subevent-card">
-        <div class="img-placeholder">Research Symposium — Image</div>
+      <a class="subevent-card" href="event-research-symposium.html">
+        <img src="assets/images/research.jpeg" alt="Research Symposium">
         <div class="subevent-label">Research Symposium</div>
         <div class="subevent-overlay">
-          <button class="btn" data-view-details="tpl-research-symposium">View Details</button>
+          <span class="btn">View Details</span>
         </div>
-      </div>
+      </a>
 
     </div>
   </div>
 </section>
 
-<!-- ===================== MODAL ===================== -->
-<div class="modal-backdrop" id="event-modal">
-  <div class="modal">
-    <button class="modal-close" data-close-modal aria-label="Close">&times;</button>
-    <div id="event-modal-body"></div>
-  </div>
-</div>
 
-<!-- ===================== HIDDEN DETAIL TEMPLATES ===================== -->
-<!-- One template per sub-event. Update the placeholder text inside each as details are finalised. -->
 
-<template id="tpl-query-masters">
-  <div class="modal-header">
-    <span class="tag">TECHNIZEN</span>
-    <h3>Query Masters</h3>
-  </div>
-  <div class="modal-body">
-    <h4>Event Details</h4>
-    <p>Venue, date and time to be updated.</p>
-    <h4>Event Description</h4>
-    <p>Database querying and SQL problem-solving challenge. Description to be updated.</p>
-    <h4>Round 1</h4>
-    <p>Details to be updated.</p>
-    <h4>Round 2</h4>
-    <p>Details to be updated.</p>
-    <h4>Rules &amp; Regulations</h4>
-    <p>Rules to be updated.</p>
-    <div class="coord-row">
-      <div class="coord-col"><b>Faculty Co-ordinators</b><p>To be updated</p></div>
-      <div class="coord-col"><b>Student Co-ordinators</b><p>To be updated</p></div>
-    </div>
-    <div class="apply-cta">
-      <a href="#" class="btn btn-outline">Click here to apply</a>
-    </div>
-  </div>
-</template>
 
-<template id="tpl-dsa-clash">
-  <div class="modal-header">
-    <span class="tag">TECHNIZEN</span>
-    <h3>DSA Clash</h3>
-  </div>
-  <div class="modal-body">
-    <h4>Event Details</h4>
-    <p>Venue, date and time to be updated.</p>
-    <h4>Event Description</h4>
-    <p>Competitive data structures and algorithms coding contest. Description to be updated.</p>
-    <h4>Round 1</h4>
-    <p>Details to be updated.</p>
-    <h4>Round 2</h4>
-    <p>Details to be updated.</p>
-    <h4>Rules &amp; Regulations</h4>
-    <p>Rules to be updated.</p>
-    <div class="coord-row">
-      <div class="coord-col"><b>Faculty Co-ordinators</b><p>To be updated</p></div>
-      <div class="coord-col"><b>Student Co-ordinators</b><p>To be updated</p></div>
-    </div>
-    <div class="apply-cta">
-      <a href="#" class="btn btn-outline">Click here to apply</a>
-    </div>
-  </div>
-</template>
 
-<template id="tpl-ai-innovators">
-  <div class="modal-header">
-    <span class="tag">TECHNIZEN</span>
-    <h3>AI Innovators Arena</h3>
-  </div>
-  <div class="modal-body">
-    <h4>Event Details</h4>
-    <p>Venue, date and time to be updated.</p>
-    <h4>Event Description</h4>
-    <p>A showcase of applied AI/ML projects and ideas. Description to be updated.</p>
-    <h4>Round 1</h4>
-    <p>Details to be updated.</p>
-    <h4>Round 2</h4>
-    <p>Details to be updated.</p>
-    <h4>Rules &amp; Regulations</h4>
-    <p>Rules to be updated.</p>
-    <div class="coord-row">
-      <div class="coord-col"><b>Faculty Co-ordinators</b><p>To be updated</p></div>
-      <div class="coord-col"><b>Student Co-ordinators</b><p>To be updated</p></div>
-    </div>
-    <div class="apply-cta">
-      <a href="#" class="btn btn-outline">Click here to apply</a>
-    </div>
-  </div>
-</template>
 
-<template id="tpl-pixel-craft">
-  <div class="modal-header">
-    <span class="tag">TECHNIZEN</span>
-    <h3>Pixel Craft</h3>
-  </div>
-  <div class="modal-body">
-    <h4>Event Details</h4>
-    <p>Venue, date and time to be updated.</p>
-    <h4>Event Description</h4>
-    <p>UI/UX and creative design challenge. Description to be updated.</p>
-    <h4>Round 1</h4>
-    <p>Details to be updated.</p>
-    <h4>Round 2</h4>
-    <p>Details to be updated.</p>
-    <h4>Rules &amp; Regulations</h4>
-    <p>Rules to be updated.</p>
-    <div class="coord-row">
-      <div class="coord-col"><b>Faculty Co-ordinators</b><p>To be updated</p></div>
-      <div class="coord-col"><b>Student Co-ordinators</b><p>To be updated</p></div>
-    </div>
-    <div class="apply-cta">
-      <a href="#" class="btn btn-outline">Click here to apply</a>
-    </div>
-  </div>
-</template>
-
-<template id="tpl-build-pitch">
-  <div class="modal-header">
-    <span class="tag">TECHNIZEN</span>
-    <h3>Build and Pitch</h3>
-  </div>
-  <div class="modal-body">
-    <h4>Event Details</h4>
-    <p>Venue, date and time to be updated.</p>
-    <h4>Event Description</h4>
-    <p>Rapid prototyping and startup-pitch challenge. Description to be updated.</p>
-    <h4>Round 1</h4>
-    <p>Details to be updated.</p>
-    <h4>Round 2</h4>
-    <p>Details to be updated.</p>
-    <h4>Rules &amp; Regulations</h4>
-    <p>Rules to be updated.</p>
-    <div class="coord-row">
-      <div class="coord-col"><b>Faculty Co-ordinators</b><p>To be updated</p></div>
-      <div class="coord-col"><b>Student Co-ordinators</b><p>To be updated</p></div>
-    </div>
-    <div class="apply-cta">
-      <a href="#" class="btn btn-outline">Click here to apply</a>
-    </div>
-  </div>
-</template>
-
-<template id="tpl-research-symposium">
-  <div class="modal-header">
-    <span class="tag">TECHNIZEN</span>
-    <h3>Research Symposium</h3>
-  </div>
-  <div class="modal-body">
-    <h4>Event Details</h4>
-    <p>Venue, date and time to be updated.</p>
-    <h4>Event Description</h4>
-    <p>Paper presentations and research poster showcase. Description to be updated.</p>
-    <h4>Round 1</h4>
-    <p>Details to be updated.</p>
-    <h4>Round 2</h4>
-    <p>Details to be updated.</p>
-    <h4>Rules &amp; Regulations</h4>
-    <p>Rules to be updated.</p>
-    <div class="coord-row">
-      <div class="coord-col"><b>Faculty Co-ordinators</b><p>To be updated</p></div>
-      <div class="coord-col"><b>Student Co-ordinators</b><p>To be updated</p></div>
-    </div>
-    <div class="apply-cta">
-      <a href="#" class="btn btn-outline">Click here to apply</a>
-    </div>
-  </div>
-</template>
 
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <h4>R.V.R. &amp; J.C. College of Engineering</h4>
-        <p style="max-width:360px;font-size:.88rem;">Chandramoulipuram, Chowdavaram, Guntur, Andhra Pradesh — an autonomous institution affiliated to Acharya Nagarjuna University, sponsored by Nagarjuna Education Society.</p>
+        <p style="max-width:360px;font-size:.88rem;">Chandramoulipuram, Chowdavaram, Guntur, Andhra Pradesh â€” an autonomous institution affiliated to Acharya Nagarjuna University, sponsored by Nagarjuna Education Society.</p>
       </div>
       <div>
         <h4>Quick Links</h4>
@@ -330,7 +164,7 @@
         <a href="#">Department of CSE</a>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 ACM Student Chapter, Dept. of CSE — R.V.R. &amp; J.C. College of Engineering (Autonomous). All rights reserved.</div>
+    <div class="footer-bottom">&copy; 2026 ACM Student Chapter, Dept. of CSE â€” R.V.R. &amp; J.C. College of Engineering (Autonomous). All rights reserved.</div>
   </div>
 </footer>
 
