@@ -413,9 +413,15 @@ table.data-table td.placeholder{ color:var(--ink-soft); font-style:italic; }
    EVENTS
    ============================================================ */
 .event-master-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  display:flex;
+  justify-content:center;
+  align-items:center;
   gap:26px;
+}
+.event-master-grid .event-master-card:not(.placeholder-slot){
+  width: min(560px, 90vw);
+  min-height: 380px;
+  flex-shrink: 0;
 }
 .event-master-card{
   position:relative;
@@ -470,16 +476,26 @@ table.data-table td.placeholder{ color:var(--ink-soft); font-style:italic; }
 /* Sub-event grid (inside TECHNIZEN) */
 .subevent-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-  gap:24px;
+  grid-template-columns:repeat(3, 1fr);
+  gap:28px;
 }
+@media (max-width:900px){ .subevent-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .subevent-grid{ grid-template-columns:1fr; } }
 .subevent-card{
   position:relative;
   border-radius:10px;
   overflow:hidden;
-  height:230px;
+  height:320px;
   box-shadow:var(--shadow-sm);
   border:1px solid var(--line);
+  display:block;
+  text-decoration:none;
+  color:inherit;
+}
+.subevent-card img{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
 }
 .subevent-card .img-placeholder{
   width:100%;height:100%;
@@ -493,12 +509,12 @@ table.data-table td.placeholder{ color:var(--ink-soft); font-style:italic; }
 }
 .subevent-label{
   position:absolute; left:0; right:0; bottom:0;
-  padding:14px 16px;
+  padding:20px 20px;
   background:linear-gradient(180deg, rgba(11,31,77,0) 0%, rgba(7,20,51,.92) 75%);
   color:var(--white);
   font-family:var(--font-display);
   font-weight:700;
-  font-size:1.05rem;
+  font-size:1.25rem;
 }
 .subevent-overlay{
   position:absolute; inset:0;
