@@ -66,7 +66,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 36px;
-  font-size: 1.02rem;
+  font-size: 1.15rem;
 }
 .event-facts-table td {
   padding: 11px 14px;
@@ -105,18 +105,20 @@
 
 .event-section-block p {
   color: var(--ink-soft);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   margin: 0 0 12px;
+  text-align: justify;
 }
 
 .event-section-block ul,
 .event-section-block ol {
   color: var(--ink-soft);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   padding-left: 24px;
   margin: 0 0 12px;
+  text-align: justify;
 }
 
 .event-section-block li { margin-bottom: 7px; }
@@ -139,9 +141,10 @@
 }
 .coord-col p {
   color: var(--ink-soft);
-  font-size: 1rem;
+  font-size: 1.15rem;
   margin: 0 0 8px;
   line-height: 1.6;
+  text-align: justify;
 }
 .coord-col a {
   color: var(--blue);
@@ -225,9 +228,10 @@
 
 .sidebar-box p {
   color: var(--ink-soft);
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin: 0 0 8px;
   line-height: 1.6;
+  text-align: justify;
 }
 .sidebar-box p:last-child { margin-bottom: 0; }
 .sidebar-box span { color: var(--navy); font-weight: 600; }
