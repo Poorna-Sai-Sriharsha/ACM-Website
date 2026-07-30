@@ -341,10 +341,6 @@ p{ margin:0 0 1em; }
   margin-bottom: 12px;
   line-height: 1.65;
 }
-.info-card.mission-card p,
-.info-card.mission-card li {
-  text-align: left;
-}
 .info-card p:last-child, .info-card li:last-child {
   margin-bottom: 0;
 }
