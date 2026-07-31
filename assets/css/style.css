@@ -844,9 +844,33 @@ table.data-table td.placeholder {
   }
 }
 
-@media (max-width:560px) {
+@media (max-width:768px) {
+  /* 2 columns x 3 rows — tight gap */
   .subevent-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Height tuned to match image aspect ratio (380x320 ≈ 1.19:1)
+     Card width ≈ 163px → height 155px gives ratio 1.05:1, very close → minimal crop */
+  .subevent-card {
+    height: 155px;
+    border-radius: 8px;
+  }
+
+  /* cover keeps image filling card — near-zero cropping at this ratio */
+  .subevent-card img {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  /* Single-line label, no wrapping, ellipsis for long names */
+  .subevent-label {
+    font-size: 0.76rem;
+    padding: 6px 8px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
