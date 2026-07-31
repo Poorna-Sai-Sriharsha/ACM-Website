@@ -1607,4 +1607,9 @@ table.data-table td.placeholder {
   .info-card li {
     text-align: left !important;
   }
+
+  /* ---- Hide 2nd and 3rd paragraphs in About ACM section on mobile ---- */
+  .about-grid > div:first-child .info-card p:not(:first-of-type) {
+    display: none;
+  }
 }
