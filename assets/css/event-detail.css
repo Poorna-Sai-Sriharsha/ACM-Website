@@ -303,4 +303,13 @@
   .coord-col p {
     font-size: 0.95rem;
   }
+
+  /* ---- Fix: remove text-justify on mobile (causes ugly word gaps) ---- */
+  .event-section-block p,
+  .event-section-block ul,
+  .event-section-block ol,
+  .sidebar-box p,
+  .coord-col p {
+    text-align: left !important;
+  }
 }

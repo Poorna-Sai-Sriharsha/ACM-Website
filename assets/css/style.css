@@ -1577,4 +1577,10 @@ table.data-table td.placeholder {
     font-size: 0.85rem;
     line-height: 1.5;
   }
+
+  /* ---- Fix: remove text-justify on mobile (about page info cards) ---- */
+  .info-card p,
+  .info-card li {
+    text-align: left !important;
+  }
 }
