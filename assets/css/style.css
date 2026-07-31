@@ -1554,4 +1554,27 @@ table.data-table td.placeholder {
   .marquee-row.row-a {
     margin-bottom: 14px;
   }
+
+  /* ---- CONTACT: compact address on mobile (3 lines max) ---- */
+  .contact-item {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .contact-item .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    flex: none;
+  }
+
+  .contact-item h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+
+  .contact-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
 }
