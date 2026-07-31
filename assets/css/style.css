@@ -1613,4 +1613,9 @@ table.data-table td.placeholder {
   .about-grid > div:first-child .info-card p:not(:first-of-type) {
     display: none;
   }
+
+  /* ---- Hide 3rd paragraph in Our Mission section on mobile ---- */
+  .about-grid > div:last-child .info-card:nth-of-type(2) p:nth-of-type(3) {
+    display: none;
+  }
 }
