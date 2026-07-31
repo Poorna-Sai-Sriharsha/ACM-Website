@@ -847,16 +847,27 @@ table.data-table td.placeholder {
 @media (max-width:768px) {
   .subevent-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 12px;
   }
 
   .subevent-card {
-    height: 190px;
+    height: 200px;
   }
 
+  /* Show full image without any cropping on mobile */
+  .subevent-card img {
+    object-fit: contain;
+    object-position: center;
+    background: var(--navy-dark, #0b1f4d);
+  }
+
+  /* Single-line label with ellipsis if too long */
   .subevent-label {
-    font-size: 0.82rem;
-    padding: 8px 10px 10px;
+    font-size: 0.78rem;
+    padding: 7px 8px 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
