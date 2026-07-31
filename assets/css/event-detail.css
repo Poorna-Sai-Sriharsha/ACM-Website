@@ -236,3 +236,71 @@
 }
 .sidebar-box p:last-child { margin-bottom: 0; }
 .sidebar-box span { color: var(--navy); font-weight: 600; }
+
+/* ============================================================
+   MOBILE RESPONSIVE OVERRIDES  (≤ 768 px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* ---- Fix: sidebar must scroll with the page, not stay fixed ---- */
+  .event-detail-sidebar {
+    position: static !important;
+    top: auto !important;
+  }
+
+  /* ---- Fix: facts table fits without any horizontal scrolling ---- */
+  .event-facts-table {
+    font-size: 0.85rem;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .event-facts-table td {
+    padding: 9px 10px;
+    word-break: break-word;
+  }
+
+  .event-facts-table td:first-child {
+    width: 40%;
+    white-space: normal;
+    font-size: 0.82rem;
+  }
+
+  /* ---- Reduce hero heading on mobile ---- */
+  .event-detail-hero {
+    padding: 28px 0 24px;
+  }
+
+  .event-detail-hero h1 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+  }
+
+  .event-hero-sub {
+    font-size: 0.95rem;
+  }
+
+  /* ---- Reduce section block text sizes ---- */
+  .event-section-block p,
+  .event-section-block ul,
+  .event-section-block ol {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .event-section-block h2 {
+    font-size: 1.15rem;
+  }
+
+  /* ---- Sidebar content compact on mobile ---- */
+  .sidebar-poster-img {
+    height: 200px;
+  }
+
+  .sidebar-box p {
+    font-size: 0.9rem;
+  }
+
+  .coord-col p {
+    font-size: 0.95rem;
+  }
+}
