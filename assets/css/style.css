@@ -570,6 +570,7 @@ p {
 @media (max-width:900px) {
   .about-grid {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 }
 
