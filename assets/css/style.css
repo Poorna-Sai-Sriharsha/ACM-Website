@@ -844,9 +844,19 @@ table.data-table td.placeholder {
   }
 }
 
-@media (max-width:560px) {
+@media (max-width:768px) {
   .subevent-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .subevent-card {
+    height: 190px;
+  }
+
+  .subevent-label {
+    font-size: 0.82rem;
+    padding: 8px 10px 10px;
   }
 }
 
