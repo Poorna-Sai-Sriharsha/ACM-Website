@@ -356,6 +356,11 @@ p {
   object-fit: cover;
 }
 
+/* Navy background to match hero-banner.png edges — gaps become invisible */
+.slide.slide-navy {
+  background: #0f1e7a;
+}
+
 @media (max-width:768px) {
   .slide {
     height: 280px;
