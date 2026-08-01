@@ -308,7 +308,7 @@ p {
 .slide {
   display: none;
   position: relative;
-  min-height: 340px;
+  height: 400px;
   background: var(--navy);
 }
 
@@ -318,14 +318,11 @@ p {
 }
 
 .slide.slide-banner {
-  background: #fff;
-  align-items: center;
-  justify-content: center;
-  min-height: 0;
+  background: linear-gradient(135deg, #0b1f4d 0%, #1a3a8a 40%, #2563b0 70%, #0b1f4d 100%);
 }
 
 .slide.slide-banner.active {
-  display: flex;
+  display: block;
 }
 
 @keyframes fadeIn {
@@ -340,44 +337,34 @@ p {
 
 .slide img {
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover;
   opacity: .55;
 }
 
-/* Banner images: show full image without any cropping */
 .slide.slide-banner img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   object-position: center;
   opacity: 1;
   display: block;
 }
 
+/* Use on banner slides that should enlarge to fill (e.g. hero banner) */
+.slide.slide-cover img {
+  object-fit: cover;
+}
+
 @media (max-width:768px) {
-
-  .slide,
-  .slide img {
+  .slide {
     height: 280px;
-  }
-
-  .slide.slide-banner,
-  .slide.slide-banner img {
-    height: auto;
   }
 }
 
 @media (max-width:480px) {
-
-  .slide,
-  .slide img {
+  .slide {
     height: 200px;
-  }
-
-  .slide.slide-banner,
-  .slide.slide-banner img {
-    height: auto;
   }
 }
 
@@ -1436,15 +1423,8 @@ table.data-table td.placeholder {
     padding: 0 10px;
   }
 
-  .slide,
-  .slide img {
+  .slide {
     height: 160px !important;
-    min-height: unset;
-  }
-
-  .slide.slide-banner,
-  .slide.slide-banner img {
-    height: auto !important;
     min-height: unset;
   }
 
