@@ -130,6 +130,7 @@ p {
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  color: var(--white);
   transition: transform 0.2s ease;
 }
 
