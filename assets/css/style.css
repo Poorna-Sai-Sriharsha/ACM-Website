@@ -572,6 +572,17 @@ p {
     gap: 12px;
   }
 
+  /* Gap between Vision and Mission cards inside the right column */
+  .about-grid > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .about-grid > div:last-child .info-card {
+    margin-bottom: 0;
+  }
+
   .info-card {
     margin-bottom: 0;
     padding: 18px 20px;
@@ -1358,18 +1369,29 @@ table.data-table td.placeholder {
 
 @media (max-width:576px) {
   .footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  /* College info block spans full width on top */
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    padding-bottom: 12px;
+    margin-bottom: 4px;
   }
 
   .site-footer h4 {
-    font-size: 0.8rem;
-    margin-bottom: 8px;
+    font-size: 0.78rem;
+    margin-bottom: 6px;
   }
 
   .site-footer a {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     padding: 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .site-footer p {
