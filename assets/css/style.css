@@ -569,6 +569,12 @@ p {
 @media (max-width:900px) {
   .about-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .info-card {
+    margin-bottom: 0;
+    padding: 18px 20px;
   }
 }
 
@@ -1352,7 +1358,22 @@ table.data-table td.placeholder {
 
 @media (max-width:576px) {
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  .site-footer h4 {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+
+  .site-footer a {
+    font-size: 0.75rem;
+    padding: 2px 0;
+  }
+
+  .site-footer p {
+    font-size: 0.72rem;
   }
 }
 
