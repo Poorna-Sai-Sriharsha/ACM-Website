@@ -872,17 +872,28 @@ table.data-table td.placeholder {
     gap: 10px;
   }
 
-  /* Height tuned to match image aspect ratio (380x320 ≈ 1.19:1)
-     Card width ≈ 163px → height 155px gives ratio 1.05:1, very close → minimal crop */
+  /* Height and aspect ratio tuned to match mobile image dimensions (1297x1213) */
   .subevent-card {
-    height: 155px;
-    border-radius: 8px;
+    height: auto !important;
+    aspect-ratio: 1297 / 1213 !important;
+    border-radius: 8px !important;
   }
 
-  /* cover keeps image filling card — near-zero cropping at this ratio */
+  .subevent-card picture {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
   .subevent-card img {
-    object-fit: cover;
-    object-position: center center;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    padding: 10px 12px 28px !important;
+    box-sizing: border-box !important;
   }
 
   /* Single-line label, no wrapping, ellipsis for long names */
