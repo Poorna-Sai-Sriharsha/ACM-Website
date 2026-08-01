@@ -891,15 +891,16 @@ table.data-table td.placeholder {
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important;
-    object-position: center center !important;
-    padding: 10px 12px 28px !important;
+    object-position: center 15% !important;
+    padding: 2px 12px 38px !important;
     box-sizing: border-box !important;
   }
 
-  /* Single-line label, no wrapping, ellipsis for long names */
+  /* Single-line label with balanced padding */
   .subevent-label {
     font-size: 0.76rem;
-    padding: 6px 8px 8px;
+    padding: 5px 6px 7px !important;
+    bottom: 0 !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
