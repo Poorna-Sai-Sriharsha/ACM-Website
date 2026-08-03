@@ -898,6 +898,7 @@ table.data-table td.placeholder {
 
   /* Single-line label with balanced padding */
   .subevent-label {
+    display: block !important;
     font-size: 0.76rem;
     padding: 5px 6px 7px !important;
     bottom: 0 !important;
@@ -954,6 +955,7 @@ table.data-table td.placeholder {
 }
 
 .subevent-label {
+  display: none;
   position: absolute;
   left: 0;
   right: 0;
