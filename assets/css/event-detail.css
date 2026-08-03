@@ -114,15 +114,31 @@
 /* Facts Table - Card Wrapper & Large Typography */
 .event-facts-table {
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 36px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 42px;
   font-size: 1.3rem;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(6, 25, 56, 0.07);
+  border: 1px solid rgba(6, 25, 56, 0.1);
 }
+
+.event-facts-table tr {
+  transition: background-color 0.2s ease;
+}
+
+.event-facts-table tr:hover {
+  background-color: rgba(12, 43, 94, 0.03);
+}
+
 .event-facts-table td {
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--line);
-  color: var(--ink-soft);
+  padding: 15px 22px;
+  border-bottom: 1px solid rgba(6, 25, 56, 0.08);
+  color: #000000;
   font-size: 1.3rem;
+  line-height: 1.5;
 }
 
 .event-facts-table td:first-child {
@@ -130,7 +146,8 @@
   color: var(--navy);
   width: 36%;
   white-space: nowrap;
-  font-size: 1.3rem;
+  background: rgba(6, 25, 56, 0.02);
+  border-right: 1px solid rgba(6, 25, 56, 0.06);
 }
 
 .event-facts-table tr:last-child td {
@@ -149,7 +166,8 @@
 }
 
 .event-section-block h2 {
-  font-size: 1.55rem;
+  font-size: 1.6rem;
+  font-weight: 800;
   color: var(--navy);
   margin-bottom: 18px;
   padding-left: 14px;
@@ -159,7 +177,7 @@
 }
 
 .event-section-block h3 {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-family: var(--font-body);
   font-weight: 700;
   color: var(--navy);
@@ -167,10 +185,10 @@
 }
 
 .event-section-block p {
-  color: var(--ink-soft);
-  font-size: 1.3rem;
-  line-height: 1.8;
-  margin: 0 0 12px;
+  color: #000000;
+  font-size: 1.35rem;
+  line-height: 1.85;
+  margin: 0 0 16px;
   text-align: justify;
 }
 
@@ -184,15 +202,27 @@
 
 .event-section-block ul,
 .event-section-block ol {
-  color: var(--ink-soft);
-  font-size: 1.3rem;
-  line-height: 1.8;
-  padding-left: 24px;
-  margin: 0 0 12px;
+  color: #000000;
+  font-size: 1.35rem;
+  line-height: 1.85;
+  padding-left: 32px;
+  margin: 0 0 18px;
   text-align: justify;
 }
 
-.event-section-block li { margin-bottom: 8px; font-size: 1.3rem; }
+.event-section-block li {
+  margin-bottom: 10px;
+}
+
+.event-section-block li::marker {
+  color: var(--blue);
+  font-size: 1.1em;
+}
+
+.event-section-block strong {
+  color: var(--navy);
+  font-weight: 700;
+}
 
 /* Coordinator Cards */
 .coord-row {
@@ -219,7 +249,7 @@
 }
 
 .coord-col h3 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-family: var(--font-body);
   font-weight: 800;
   color: var(--navy);
@@ -229,7 +259,7 @@
 }
 
 .coord-col p {
-  color: var(--ink-soft);
+  color: #000000;
   font-size: 1.3rem;
   margin: 0 0 8px;
   line-height: 1.6;
@@ -377,8 +407,8 @@
 }
 
 .sidebar-box p {
-  color: var(--ink-soft);
-  font-size: 1.3rem;
+  color: #000000;
+  font-size: 1.05rem;
   margin: 0 0 8px;
   line-height: 1.55;
   text-align: left;
@@ -536,5 +566,41 @@
   .sidebar-box p,
   .coord-col p {
     text-align: left !important;
+  }
+}
+
+/* ============================================================
+   QUERY MASTERS EXPLICIT FONT SIZE BOOST & CONSISTENCY
+   ============================================================ */
+.query-masters-page .event-facts-table,
+.query-masters-page .event-facts-table td,
+.query-masters-page .event-section-block p,
+.query-masters-page .event-section-block ul,
+.query-masters-page .event-section-block ol,
+.query-masters-page .event-section-block li,
+.query-masters-page .coord-col p,
+.query-masters-page .sidebar-box p {
+  font-size: 1.5rem !important;
+  line-height: 1.85 !important;
+}
+
+.query-masters-page .event-section-block h2 {
+  font-size: 1.85rem !important;
+}
+
+.query-masters-page .event-section-block h3 {
+  font-size: 1.6rem !important;
+}
+
+@media (max-width: 768px) {
+  .query-masters-page .event-facts-table,
+  .query-masters-page .event-facts-table td,
+  .query-masters-page .event-section-block p,
+  .query-masters-page .event-section-block ul,
+  .query-masters-page .event-section-block ol,
+  .query-masters-page .event-section-block li,
+  .query-masters-page .coord-col p,
+  .query-masters-page .sidebar-box p {
+    font-size: 1.15rem !important;
   }
 }
