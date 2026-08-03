@@ -177,7 +177,7 @@
 }
 
 .event-section-block h3 {
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   font-family: var(--font-body);
   font-weight: 700;
   color: var(--navy);
@@ -492,6 +492,7 @@
     padding-right: 16px !important;
     justify-content: center !important;
   }
+  }
 
   .event-detail-hero {
     padding: 36px 0 30px;
@@ -538,6 +539,7 @@
   .sidebar-box p {
     font-size: 0.95rem;
   }
+  }
 
   .sidebar-box h4 {
     font-size: 0.95rem;
@@ -564,5 +566,41 @@
   .sidebar-box p,
   .coord-col p {
     text-align: left !important;
+  }
+}
+
+/* ============================================================
+   QUERY MASTERS EXPLICIT FONT SIZE BOOST & CONSISTENCY
+   ============================================================ */
+.query-masters-page .event-facts-table,
+.query-masters-page .event-facts-table td,
+.query-masters-page .event-section-block p,
+.query-masters-page .event-section-block ul,
+.query-masters-page .event-section-block ol,
+.query-masters-page .event-section-block li,
+.query-masters-page .coord-col p,
+.query-masters-page .sidebar-box p {
+  font-size: 1.5rem !important;
+  line-height: 1.85 !important;
+}
+
+.query-masters-page .event-section-block h2 {
+  font-size: 1.85rem !important;
+}
+
+.query-masters-page .event-section-block h3 {
+  font-size: 1.6rem !important;
+}
+
+@media (max-width: 768px) {
+  .query-masters-page .event-facts-table,
+  .query-masters-page .event-facts-table td,
+  .query-masters-page .event-section-block p,
+  .query-masters-page .event-section-block ul,
+  .query-masters-page .event-section-block ol,
+  .query-masters-page .event-section-block li,
+  .query-masters-page .coord-col p,
+  .query-masters-page .sidebar-box p {
+    font-size: 1.15rem !important;
   }
 }
