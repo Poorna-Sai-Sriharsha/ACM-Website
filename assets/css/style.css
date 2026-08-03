@@ -1148,7 +1148,7 @@ table.data-table td.placeholder {
 }
 
 .modal-body p {
-  color: var(--ink-soft);
+  color: #000000;
   font-size: .94rem;
 }
 
