@@ -586,9 +586,14 @@
     font-size: 1.47rem;
   }
 
-  /* ---- Mobile sidebar & coordinator typography ---- */
+  /* ---- Mobile sidebar poster image alignment ---- */
   .sidebar-poster-img {
-    height: 220px;
+    height: auto !important;
+    max-height: 420px !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    object-fit: contain !important;
+    margin: 0 auto 16px auto !important;
   }
 
   .sidebar-box p {
