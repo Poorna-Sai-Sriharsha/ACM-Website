@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- Mobile nav toggle ---------- */
   var navToggle = document.querySelector('.nav-toggle');
-  var navLinks  = document.querySelector('.nav-links');
+  var navLinks = document.querySelector('.nav-links');
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', function () {
       navLinks.classList.toggle('open');
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---------- Events: master grid -> TECHNIZEN sub-grid ---------- */
   var masterCards = document.querySelectorAll('[data-open-master]');
-  var masterView   = document.getElementById('events-master-view');
-  var subView      = document.getElementById('events-sub-view');
+  var masterView = document.getElementById('events-master-view');
+  var subView = document.getElementById('events-sub-view');
   var subViewTitle = document.getElementById('sub-view-title');
 
   function showSubView(title) {
@@ -121,9 +121,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ---------- Event Countdown Timer (TECHNIZEN 2026 - Aug 11) ---------- */
+  (function initCountdownTimer() {
+    var daysEl = document.getElementById('cd-days');
+    var hoursEl = document.getElementById('cd-hours');
+    var minsEl = document.getElementById('cd-mins');
+    var secsEl = document.getElementById('cd-secs');
+
+    if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+    // Target Date: August 11, 2026 09:00:00 AM IST
+    var targetDate = new Date('August 11, 2026 00:00:00').getTime();
+
+    function updateTimer() {
+      var now = new Date().getTime();
+      var diff = targetDate - now;
+
+      if (diff <= 0) {
+        var container = document.getElementById('technizen-countdown');
+        if (container) {
+          container.innerHTML = '<div class="live-event-banner"><span class="pulse-dot"></span> We Are Live! Step Into Technizen 2K26</div>';
+        }
+        return;
+      }
+
+      var d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      var s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl.textContent = d < 10 ? '0' + d : String(d);
+      hoursEl.textContent = h < 10 ? '0' + h : String(h);
+      minsEl.textContent = m < 10 ? '0' + m : String(m);
+      secsEl.textContent = s < 10 ? '0' + s : String(s);
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  })();
+
   /* ---------- Event detail modal ---------- */
   var modalBackdrop = document.getElementById('event-modal');
-  var modalBody      = document.getElementById('event-modal-body');
+  var modalBody = document.getElementById('event-modal-body');
 
   document.querySelectorAll('[data-view-details]').forEach(function (trigger) {
     trigger.addEventListener('click', function (e) {
@@ -213,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.color = isGold ? config.goldColor : (Math.random() < 0.5 ? config.blueColor : config.cyanColor);
     }
 
-    Particle.prototype.update = function() {
+    Particle.prototype.update = function () {
       this.x += this.vx;
       this.y += this.vy;
 
@@ -223,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
       else if (this.y > height + 15) this.y = -10;
     };
 
-    Particle.prototype.draw = function() {
+    Particle.prototype.draw = function () {
       // Core particle dot
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -284,9 +323,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var resizeTimeout;
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(function() {
+      resizeTimeout = setTimeout(function () {
         resize();
       }, 150);
     });
