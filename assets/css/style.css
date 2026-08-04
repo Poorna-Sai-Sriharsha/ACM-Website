@@ -1821,7 +1821,7 @@ table.data-table td.placeholder {
   }
 
   .event-master-card img {
-    object-fit: contain !important;
+    object-fit: cover !important;
     opacity: 1 !important;
   }
 
@@ -1872,14 +1872,14 @@ table.data-table td.placeholder {
     position: absolute !important;
     inset: auto 0 0 0 !important;
     padding: 16px 6px 4px 6px !important;
-    background: linear-gradient(to top, rgba(20, 80, 158, 0.55) 0%, rgba(20, 80, 158, 0.20) 55%, rgba(20, 80, 158, 0) 100%) !important;
-    color: #ffffff !important;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.35) 55%, rgba(255, 255, 255, 0) 100%) !important;
+    color: #000000 !important;
     font-family: var(--font-body) !important;
     font-size: 0.85rem !important;
     font-weight: 700 !important;
     text-align: center !important;
     line-height: 1.15 !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4) !important;
     pointer-events: none !important;
     border-bottom-left-radius: 8px !important;
     border-bottom-right-radius: 8px !important;
