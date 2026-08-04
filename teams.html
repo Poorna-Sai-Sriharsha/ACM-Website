@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teams | ACM Student Chapter — Dept. of CSE, RVRJC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Additional custom styles for teams table/page to match design aesthetics */
+    .table-wrap {
+      margin-top: 24px;
+    }
+    
+    .data-table td {
+      vertical-align: middle;
+    }
+    
+    .member-count {
+      font-weight: 600;
+      color: var(--navy);
+    }
+    
+    .table-btn-group {
+      display: flex;
+      gap: 8px;
+    }
+    
+    /* Ensure the table looks balanced on mobile */
+    @media (max-width: 768px) {
+      .table-btn-group {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================== TOP IDENTITY BANNER ===================== -->
+  <div class="top-banner">
+    <img src="assets/images/college-banner.png" alt="R.V.R. & J.C. College of Engineering — EAPCET Code: RVJC">
+  </div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="main-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-logo"><img src="assets/images/acm-logo.png" alt="ACM Logo"></div>
+        <div class="nav-brand-text">
+          <div class="nav-brand-title">ACM Student Chapter</div>
+          <div class="nav-brand-subtitle">Computer Science and Engineering</div>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="index.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="teams.html">Teams</a>
+        <a href="gallery.html">Photo Gallery</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="crumb">Home / Teams</div>
+      <h1>Our Teams</h1>
+      <p>Explore the strength of the ACM Student Chapter across various academic years</p>
+    </div>
+  </header>
+
+  <!-- ===================== TEAMS TABLE SECTION ===================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Chapter Strength</span>
+        <h2>Yearly Statistics & Members</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width: 80px;">S.No.</th>
+              <th>Academic Year</th>
+              <th>Student Members</th>
+              <th>Staff Members</th>
+              <th>Student List</th>
+              <th>Staff List</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>2025-2026</strong></td>
+              <td><span class="member-count">58</span></td>
+              <td><span class="member-count">15</span></td>
+              <td>
+                <a href="assets/documents/students-2025-26.pdf" target="_blank" rel="noopener" class="btn btn-sm">
+                  &#128196; Student List
+                </a>
+              </td>
+              <td>
+                <a href="assets/documents/staff-2025-26.pdf" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  &#128196; Staff List
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>2024-2025</strong></td>
+              <td><span class="member-count">72</span></td>
+              <td><span class="member-count">22</span></td>
+              <td>
+                <a href="assets/documents/students-2024-25.pdf" target="_blank" rel="noopener" class="btn btn-sm">
+                  &#128196; Student List
+                </a>
+              </td>
+              <td>
+                <a href="assets/documents/staff-2024-25.pdf" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  &#128196; Staff List
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>2023-2024</strong></td>
+              <td><span class="member-count">116</span></td>
+              <td><span class="member-count">21</span></td>
+              <td>
+                <a href="assets/documents/students-2023-24.pdf" target="_blank" rel="noopener" class="btn btn-sm">
+                  &#128196; Student List
+                </a>
+              </td>
+              <td>
+                <a href="assets/documents/staff-2023-24.pdf" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  &#128196; Staff List
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>2022-2023</strong></td>
+              <td><span class="member-count">139</span></td>
+              <td><span class="member-count">21</span></td>
+              <td>
+                <a href="assets/documents/students-2022-23.pdf" target="_blank" rel="noopener" class="btn btn-sm">
+                  &#128196; Student List
+                </a>
+              </td>
+              <td>
+                <a href="assets/documents/staff-2022-23.pdf" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  &#128196; Staff List
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><strong>2021-2022</strong></td>
+              <td><span class="member-count">125</span></td>
+              <td><span class="member-count">27</span></td>
+              <td>
+                <a href="assets/documents/students-2021-22.pdf" target="_blank" rel="noopener" class="btn btn-sm">
+                  &#128196; Student List
+                </a>
+              </td>
+              <td>
+                <a href="assets/documents/staff-2021-22.pdf" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  &#128196; Staff List
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><strong>2020-2021</strong></td>
+              <td><span class="member-count">68</span></td>
+              <td><span class="member-count">28</span></td>
+              <td>
+                <a href="assets/documents/students-2020-21.pdf" target="_blank" rel="noopener" class="btn btn-sm">
+                  &#128196; Student List
+                </a>
+              </td>
+              <td>
+                <a href="assets/documents/staff-2020-21.pdf" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  &#128196; Staff List
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><strong>2019-2020</strong></td>
+              <td><span class="member-count">106</span></td>
+              <td><span class="member-count">27</span></td>
+              <td>
+                <a href="assets/documents/students-2019-20.pdf" target="_blank" rel="noopener" class="btn btn-sm">
+                  &#128196; Student List
+                </a>
+              </td>
+              <td>
+                <a href="assets/documents/staff-2019-20.pdf" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  &#128196; Staff List
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><strong>2018-2019</strong></td>
+              <td><span class="member-count">37</span></td>
+              <td><span class="member-count">26</span></td>
+              <td>
+                <a href="assets/documents/students-2018-19.pdf" target="_blank" rel="noopener" class="btn btn-sm">
+                  &#128196; Student List
+                </a>
+              </td>
+              <td>
+                <a href="assets/documents/staff-2018-19.pdf" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  &#128196; Staff List
+                </a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>R.V.R. &amp; J.C. College of Engineering</h4>
+          <p style="max-width:360px;font-size:.88rem;line-height:1.5;margin-bottom:8px;">
+            R.V.R. &amp; J.C. College of Engineering,<br>
+            Chandramoulipuram, Chowdavaram, Guntur,<br>
+            Andhra Pradesh — 522019.
+          </p>
+          <p style="max-width:360px;font-size:.82rem;opacity:0.8;line-height:1.4;">
+            An autonomous institution affiliated to Acharya Nagarjuna University, sponsored by Nagarjuna Education
+            Society.
+          </p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">About the Chapter</a>
+          <a href="events.html">Events</a>
+          <a href="teams.html">Teams</a>
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="https://rvrjcce.ac.in" target="_blank" rel="noopener">College Website</a>
+        </div>
+        <div>
+          <h4>Our Events</h4>
+          <a href="events/query-masters.html">Query Masters</a>
+          <a href="events/dsa-clash.html">DSA Clash</a>
+          <a href="events/ai-innovators.html">AI Innovators Arena</a>
+          <a href="events/pixel-craft.html">Pixel Craft</a>
+          <a href="events/build-pitch.html">Build and Pitch</a>
+          <a href="events/Technoverse.html">Technoverse</a>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="https://rvrjcce.ac.in/CSE/" target="_blank" rel="noopener">Dept. of CSE</a>
+          <a href="contact.html#coordinators">Faculty &amp; Team</a>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 ACM Student Chapter, Dept. of CSE — R.V.R. &amp; J.C. College of
+        Engineering (Autonomous). All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
