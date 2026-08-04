@@ -290,11 +290,14 @@ document.addEventListener('DOMContentLoaded', function () {
       var footerEl = document.querySelector('.site-footer');
       var footerTop = footerEl ? footerEl.getBoundingClientRect().top : height + 100;
 
-      // Draw connecting lines between nearby tech nodes (only above footer)
+      var topBanner = document.querySelector('.top-banner');
+      var bannerBottom = topBanner ? topBanner.getBoundingClientRect().bottom : 0;
+
+      // Draw connecting lines between nearby tech nodes (only below top banner & above footer)
       for (var i = 0; i < particles.length; i++) {
-        if (particles[i].y >= footerTop - 5) continue;
+        if (particles[i].y <= bannerBottom + 5 || particles[i].y >= footerTop - 5) continue;
         for (var j = i + 1; j < particles.length; j++) {
-          if (particles[j].y >= footerTop - 5) continue;
+          if (particles[j].y <= bannerBottom + 5 || particles[j].y >= footerTop - 5) continue;
           var dx = particles[i].x - particles[j].x;
           var dy = particles[i].y - particles[j].y;
           var dist = Math.sqrt(dx * dx + dy * dy);
@@ -311,10 +314,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
 
-      // Update & draw tech nodes (omit drawing inside footer)
+      // Update & draw tech nodes (omit drawing inside top banner & footer)
       for (var k = 0; k < particles.length; k++) {
         particles[k].update();
-        if (particles[k].y < footerTop - 5) {
+        if (particles[k].y > bannerBottom + 5 && particles[k].y < footerTop - 5) {
           particles[k].draw();
         }
       }

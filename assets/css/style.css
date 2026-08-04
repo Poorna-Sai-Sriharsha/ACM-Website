@@ -108,6 +108,8 @@ p {
    TOP IDENTITY BANNER
    ============================================================ */
 .top-banner {
+  position: relative;
+  z-index: 10;
   width: 100%;
   background: var(--white);
   border-bottom: 3px solid var(--navy);
