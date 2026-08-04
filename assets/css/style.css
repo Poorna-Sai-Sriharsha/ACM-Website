@@ -55,6 +55,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ---- Floating Connected Tech Nodes Canvas Backdrop ---- */
+#tech-nodes-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.75;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -741,27 +753,56 @@ table.data-table td.placeholder {
   gap: 26px;
 }
 
-.event-master-grid .event-master-card:not(.placeholder-slot) {
+.event-master-grid .event-master-card-wrap {
+  position: relative;
   width: min(960px, 90vw);
   aspect-ratio: 2 / 1;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Soft ambient radial gradient backdrop behind the card */
+.card-ambient-backdrop {
+  position: absolute;
+  inset: -24px;
+  border-radius: 30px;
+  background: radial-gradient(circle at 35% 40%, rgba(0, 102, 204, 0.48) 0%, rgba(200, 161, 58, 0.38) 45%, rgba(20, 80, 158, 0.18) 70%, transparent 85%);
+  filter: blur(40px);
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease, background 0.35s ease;
+}
+
+.event-master-card-wrap:hover .card-ambient-backdrop {
+  opacity: 1;
+  transform: scale(1.03);
+  filter: blur(48px);
+  background: radial-gradient(circle at 40% 45%, rgba(0, 102, 204, 0.65) 0%, rgba(200, 161, 58, 0.48) 50%, rgba(20, 80, 158, 0.28) 75%, transparent 90%);
 }
 
 .event-master-card {
+  width: 100%;
+  height: 100%;
   position: relative;
+  z-index: 1;
   border-radius: 10px;
   overflow: hidden;
   min-height: 220px;
   cursor: pointer;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0px 20px 30px rgba(0, 102, 204, 0.25);
+  filter: drop-shadow(0px 20px 30px rgba(0, 102, 204, 0.25));
   background: var(--navy);
   border: 2px solid transparent;
-  transition: transform .35s ease, box-shadow .35s ease;
+  transition: transform .35s ease, box-shadow .35s ease, filter .35s ease;
 }
 
 .event-master-card:not(.placeholder-slot):hover {
   transform: translateY(-6px) scale(1.012);
-  box-shadow: 0 20px 60px rgba(11,31,77,.30);
+  box-shadow: 0 24px 64px rgba(0, 102, 204, 0.35);
+  filter: drop-shadow(0px 24px 36px rgba(0, 102, 204, 0.35));
 }
 
 
@@ -1350,6 +1391,8 @@ table.data-table td.placeholder {
    FOOTER
    ============================================================ */
 .site-footer {
+  position: relative;
+  z-index: 10;
   background: var(--navy-dark);
   color: rgba(255, 255, 255, .75);
   padding: 44px 0 20px;
@@ -1570,9 +1613,14 @@ table.data-table td.placeholder {
 
   /* ---- EVENTS PAGE: remove ALL hover effects on mobile ---- */
   /* Master card mobile view aspect ratio to fit full portrait poster */
-  .event-master-grid .event-master-card:not(.placeholder-slot) {
+  .event-master-grid .event-master-card-wrap {
     width: 100%;
     aspect-ratio: 1023 / 1537;
+    min-height: auto;
+  }
+  .event-master-card {
+    width: 100%;
+    height: 100%;
     min-height: auto;
   }
 

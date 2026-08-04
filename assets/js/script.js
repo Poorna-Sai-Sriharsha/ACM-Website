@@ -71,12 +71,18 @@ document.addEventListener('DOMContentLoaded', function () {
     masterView.style.display = 'none';
     subView.style.display = 'block';
     if (subViewTitle && title) subViewTitle.textContent = title;
+
+    var canvas = document.getElementById('tech-nodes-canvas');
+    if (canvas) canvas.style.display = 'none';
   }
 
   function showMasterView() {
     if (!subView || !masterView) return;
     subView.style.display = 'none';
     masterView.style.display = 'block';
+
+    var canvas = document.getElementById('tech-nodes-canvas');
+    if (canvas) canvas.style.display = 'block';
   }
 
   function checkHashAndToggle() {
@@ -149,5 +155,144 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.marquee-row').forEach(function (row) {
     row.innerHTML += row.innerHTML;
   });
+
+  /* ---------- Floating Connected Tech Nodes Canvas ---------- */
+  (function initTechNodesCanvas() {
+    var canvas = document.getElementById('tech-nodes-canvas');
+    if (!canvas) return;
+
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    var width, height;
+    var particles = [];
+
+    var config = {
+      maxDist: 140,
+      nodeCount: window.innerWidth < 768 ? 20 : 80,
+      blueColor: '20, 80, 158',
+      goldColor: '200, 161, 58',
+      cyanColor: '0, 102, 204'
+    };
+
+    function resize() {
+      var oldW = width;
+      var oldH = height;
+
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+
+      var isMobile = window.innerWidth < 768;
+      config.nodeCount = isMobile ? 20 : 80;
+
+      if (oldW && oldH && particles.length) {
+        // Proportionally scale particle coordinates so they stay evenly distributed during resize / devtools toggle
+        for (var i = 0; i < particles.length; i++) {
+          particles[i].x = (particles[i].x / oldW) * width;
+          particles[i].y = (particles[i].y / oldH) * height;
+        }
+        while (particles.length < config.nodeCount) {
+          particles.push(new Particle());
+        }
+        if (particles.length > config.nodeCount) {
+          particles.length = config.nodeCount;
+        }
+      }
+    }
+
+    function Particle() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      var isMobile = window.innerWidth < 768;
+      var speed = isMobile ? 0.49488 : 0.52093;
+      this.vx = (Math.random() - 0.5) * speed;
+      this.vy = (Math.random() - 0.5) * speed;
+      this.radius = isMobile ? (Math.random() * 0.6 + 0.4) : (Math.random() * 3.5 + 2.5);
+      this.alpha = Math.random() * 0.5 + 0.35;
+      var isGold = Math.random() < 0.22;
+      this.color = isGold ? config.goldColor : (Math.random() < 0.5 ? config.blueColor : config.cyanColor);
+    }
+
+    Particle.prototype.update = function() {
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < -15) this.x = width + 10;
+      else if (this.x > width + 15) this.x = -10;
+      if (this.y < -15) this.y = height + 10;
+      else if (this.y > height + 15) this.y = -10;
+    };
+
+    Particle.prototype.draw = function() {
+      // Core particle dot
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + this.color + ', ' + this.alpha + ')';
+      ctx.fill();
+
+      // Soft glowing outer ring
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius * 2.8, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + this.color + ', ' + (this.alpha * 0.22) + ')';
+      ctx.fill();
+    };
+
+    function initParticles() {
+      resize();
+      particles = [];
+      for (var i = 0; i < config.nodeCount; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function render() {
+      ctx.clearRect(0, 0, width, height);
+
+      var footerEl = document.querySelector('.site-footer');
+      var footerTop = footerEl ? footerEl.getBoundingClientRect().top : height + 100;
+
+      // Draw connecting lines between nearby tech nodes (only above footer)
+      for (var i = 0; i < particles.length; i++) {
+        if (particles[i].y >= footerTop - 5) continue;
+        for (var j = i + 1; j < particles.length; j++) {
+          if (particles[j].y >= footerTop - 5) continue;
+          var dx = particles[i].x - particles[j].x;
+          var dy = particles[i].y - particles[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < config.maxDist) {
+            var lineAlpha = (1 - dist / config.maxDist) * 0.25;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(0, 102, 204, ' + lineAlpha + ')';
+            ctx.lineWidth = 0.85;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Update & draw tech nodes (omit drawing inside footer)
+      for (var k = 0; k < particles.length; k++) {
+        particles[k].update();
+        if (particles[k].y < footerTop - 5) {
+          particles[k].draw();
+        }
+      }
+
+      requestAnimationFrame(render);
+    }
+
+    var resizeTimeout;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function() {
+        resize();
+      }, 150);
+    });
+
+    initParticles();
+    render();
+  })();
 
 });
