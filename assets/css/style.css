@@ -939,7 +939,8 @@ table.data-table td.placeholder {
     box-sizing: border-box !important;
   }
 
-  .subevent-label {
+  .subevent-label,
+  .subevent-card::after {
     display: none !important;
   }
 }
@@ -955,6 +956,19 @@ table.data-table td.placeholder {
   text-decoration: none;
   color: inherit;
   transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+/* Desktop bottom light blue gradient overlay for subevent cards */
+.subevent-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 20%;
+  background: linear-gradient(to top, rgba(20, 80, 158, 0.45) 0%, rgba(20, 80, 158, 0.12) 65%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .subevent-card:hover {
@@ -990,7 +1004,8 @@ table.data-table td.placeholder {
   letter-spacing: .04em;
 }
 
-.subevent-label {
+.subevent-label,
+.subevent-mobile-title {
   display: none !important;
 }
 
@@ -1666,6 +1681,34 @@ table.data-table td.placeholder {
   .subevent-card:hover .subevent-label {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  /* Mobile-only gradient bottom title overlay for the 6 event cards */
+  .subevent-mobile-title {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    position: absolute !important;
+    inset: auto 0 0 0 !important;
+    padding: 16px 6px 4px 6px !important;
+    background: linear-gradient(to top, rgba(20, 80, 158, 0.55) 0%, rgba(20, 80, 158, 0.20) 55%, rgba(20, 80, 158, 0) 100%) !important;
+    color: #ffffff !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    line-height: 1.15 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;
+    pointer-events: none !important;
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    box-sizing: border-box !important;
+    z-index: 3 !important;
+  }
+
+  /* DSA Clash image size adjustment */
+  .dsa-clash-card img {
+    transform: scale(0.82) !important;
   }
 
   /* ---- GALLERY: smaller tile placeholders ---- */
