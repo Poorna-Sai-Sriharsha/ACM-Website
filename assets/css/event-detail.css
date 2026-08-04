@@ -176,7 +176,7 @@
 }
 
 .event-section-block h2 {
-  font-size: 1.6rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--navy);
   margin-bottom: 18px;
@@ -187,7 +187,7 @@
 }
 
 .event-section-block h3 {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-family: var(--font-body);
   font-weight: 700;
   color: var(--navy);
@@ -196,7 +196,7 @@
 
 .event-section-block p {
   color: #000000;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   line-height: 1.85;
   margin: 0 0 16px;
   text-align: justify;
@@ -213,7 +213,7 @@
 .event-section-block ul,
 .event-section-block ol {
   color: #000000;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   line-height: 1.85;
   padding-left: 32px;
   margin: 0 0 18px;
@@ -259,7 +259,7 @@
 }
 
 .coord-col h3 {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-family: var(--font-body);
   font-weight: 800;
   color: var(--navy);
@@ -477,9 +477,9 @@
     top: auto !important;
   }
 
-  /* ---- Facts table mobile typography ---- */
+  /* ---- Facts table mobile typography (+5% from desktop 1.3rem) ---- */
   .event-facts-table {
-    font-size: 1.1rem;
+    font-size: 1.37rem;
     width: 100%;
     table-layout: fixed;
     border-radius: 10px;
@@ -488,13 +488,13 @@
   .event-facts-table td {
     padding: 12px 14px;
     word-break: break-word;
-    font-size: 1.1rem;
+    font-size: 1.37rem;
   }
 
   .event-facts-table td:first-child {
     width: 42%;
     white-space: normal;
-    font-size: 1.1rem;
+    font-size: 1.37rem;
   }
 
   /* ---- Mobile hero typography ---- */
@@ -526,20 +526,20 @@
     padding: 4px 10px;
   }
 
-  /* ---- Mobile section typography ---- */
+  /* ---- Mobile section typography (+5% from desktop values) ---- */
   .event-section-block p,
   .event-section-block ul,
   .event-section-block ol {
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1.37rem;
+    line-height: 1.8;
   }
 
   .event-section-block h2 {
-    font-size: 1.3rem;
+    font-size: 1.94rem;
   }
 
   .event-section-block h3 {
-    font-size: 1.1rem;
+    font-size: 1.47rem;
   }
 
   /* ---- Mobile sidebar & coordinator typography ---- */
@@ -550,7 +550,7 @@
   .sidebar-box p {
     font-size: 0.95rem;
   }
-  }
+  
 
   .sidebar-box h4 {
     font-size: 0.95rem;
@@ -558,11 +558,11 @@
 
   .coord-col p,
   .coord-col a {
-    font-size: 1.15rem;
+    font-size: 1.37rem;
   }
 
   .coord-col h3 {
-    font-size: 1.1rem;
+    font-size: 1.47rem;
   }
 
   .event-tagline {
@@ -578,40 +578,8 @@
   .coord-col p {
     text-align: left !important;
   }
-}
 
-/* ============================================================
-   QUERY MASTERS EXPLICIT FONT SIZE BOOST & CONSISTENCY
-   ============================================================ */
-.query-masters-page .event-facts-table,
-.query-masters-page .event-facts-table td,
-.query-masters-page .event-section-block p,
-.query-masters-page .event-section-block ul,
-.query-masters-page .event-section-block ol,
-.query-masters-page .event-section-block li,
-.query-masters-page .coord-col p,
-.query-masters-page .sidebar-box p {
-  font-size: 1.5rem !important;
-  line-height: 1.85 !important;
-}
 
-.query-masters-page .event-section-block h2 {
-  font-size: 1.85rem !important;
-}
-
-.query-masters-page .event-section-block h3 {
-  font-size: 1.6rem !important;
-}
-
-@media (max-width: 768px) {
-  .query-masters-page .event-facts-table,
-  .query-masters-page .event-facts-table td,
-  .query-masters-page .event-section-block p,
-  .query-masters-page .event-section-block ul,
-  .query-masters-page .event-section-block ol,
-  .query-masters-page .event-section-block li,
-  .query-masters-page .coord-col p,
-  .query-masters-page .sidebar-box p {
-    font-size: 1.15rem !important;
-  }
-}
+/* All 6 event pages now use the global font sizes defined above.
+   No per-page overrides needed — uniformity is enforced via
+   .event-facts-table (1.3rem) and .event-section-block (1.3rem). */
