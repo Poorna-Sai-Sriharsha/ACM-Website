@@ -133,6 +133,12 @@
 
   .event-detail-sidebar {
     order: -1;
+    position: static !important;
+    top: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 340px !important;
   }
 }
 
@@ -545,10 +551,22 @@
    ============================================================ */
 @media (max-width: 768px) {
 
-  /* ---- Mobile sidebar position ---- */
+  /* ---- Mobile sidebar position & centering ---- */
   .event-detail-sidebar {
     position: static !important;
     top: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    align-items: center !important;
+  }
+
+  .sidebar-box {
+    width: 100% !important;
+    max-width: 340px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* ---- Facts table mobile typography (+5% from desktop 1.3rem) ---- */
@@ -577,85 +595,84 @@
     padding-right: 16px !important;
     justify-content: center !important;
   }
-}
 
-.event-detail-hero {
-  padding: 36px 0 30px;
-}
+  .event-detail-hero {
+    padding: 36px 0 30px;
+  }
 
-.event-detail-hero h1 {
-  font-size: clamp(1.6rem, 5.5vw, 2.2rem);
-}
+  .event-detail-hero h1 {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+  }
 
-.event-hero-sub {
-  font-size: 1.05rem;
-}
+  .event-hero-sub {
+    font-size: 1.05rem;
+  }
 
-.event-hero-org {
-  font-size: 0.92rem;
-}
+  .event-hero-org {
+    font-size: 0.92rem;
+  }
 
-.event-detail-hero .tag {
-  font-size: 0.75rem;
-  padding: 4px 10px;
-}
+  .event-detail-hero .tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
 
-/* ---- Mobile section typography (+5% from desktop values) ---- */
-.event-section-block p,
-.event-section-block ul,
-.event-section-block ol {
-  font-size: 1.37rem;
-  line-height: 1.8;
-}
+  /* ---- Mobile section typography (+5% from desktop values) ---- */
+  .event-section-block p,
+  .event-section-block ul,
+  .event-section-block ol {
+    font-size: 1.37rem;
+    line-height: 1.8;
+  }
 
-.event-section-block h2 {
-  font-size: 1.94rem;
-}
+  .event-section-block h2 {
+    font-size: 1.94rem;
+  }
 
-.event-section-block h3 {
-  font-size: 1.47rem;
-}
+  .event-section-block h3 {
+    font-size: 1.47rem;
+  }
 
-/* ---- Mobile sidebar poster image alignment ---- */
-.sidebar-poster-img {
-  height: auto !important;
-  max-height: 420px !important;
-  width: 100% !important;
-  max-width: 340px !important;
-  object-fit: contain !important;
-  margin: 0 auto 16px auto !important;
-}
+  /* ---- Mobile sidebar poster image alignment ---- */
+  .sidebar-poster-img {
+    height: auto !important;
+    max-height: 420px !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    object-fit: contain !important;
+    margin: 0 auto 16px auto !important;
+  }
 
-.sidebar-box p {
-  font-size: 0.95rem;
-}
+  .sidebar-box p {
+    font-size: 0.95rem;
+  }
 
+  .sidebar-box h4 {
+    font-size: 0.95rem;
+  }
 
-.sidebar-box h4 {
-  font-size: 0.95rem;
-}
+  .coord-col p,
+  .coord-col a {
+    font-size: 1.37rem;
+  }
 
-.coord-col p,
-.coord-col a {
-  font-size: 1.37rem;
-}
+  .coord-col h3 {
+    font-size: 1.47rem;
+  }
 
-.coord-col h3 {
-  font-size: 1.47rem;
-}
+  .event-tagline {
+    font-size: 1.35rem;
+    padding: 22px 24px;
+  }
 
-.event-tagline {
-  font-size: 1.35rem;
-  padding: 22px 24px;
-}
-
-/* ---- Mobile text alignment ---- */
-.event-section-block p,
-.event-section-block ul,
-.event-section-block ol,
-.sidebar-box p,
-.coord-col p {
-  text-align: left !important;
+  /* ---- Mobile text alignment ---- */
+  .event-section-block p,
+  .event-section-block ul,
+  .event-section-block ol,
+  .sidebar-box p,
+  .coord-col p {
+    text-align: left !important;
+  }
 }
 
 
