@@ -878,6 +878,136 @@ table.data-table td.placeholder {
   transform: translateY(0);
 }
 
+/* ============================================================
+   ATTRACTIVE EVENT COUNTDOWN TIMER ("Choose an Event" Header)
+   ============================================================ */
+.event-header-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 38px;
+  margin-bottom: 44px;
+}
+
+.event-header-wrap .section-title {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.event-countdown-container {
+  background: linear-gradient(135deg, #071433 0%, #0b1f4d 60%, #14509e 100%);
+  border: 1.5px solid rgba(200, 161, 58, 0.45);
+  border-radius: 50px;
+  padding: 6px 44px;
+  box-shadow: 0 8px 24px rgba(11, 31, 77, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 0 auto;
+  min-width: min(640px, 92vw);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.event-countdown-container:hover {
+  transform: translateY(-2px);
+  border-color: rgba(200, 161, 58, 0.7);
+  box-shadow: 0 12px 30px rgba(11, 31, 77, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.countdown-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #eaf1fb;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.live-event-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(200, 161, 58, 0.7);
+  animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(200, 161, 58, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(200, 161, 58, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(200, 161, 58, 0);
+  }
+}
+
+.countdown-timer-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.timer-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: auto;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  backdrop-filter: none;
+}
+
+.timer-number {
+  font-family: var(--font-mono);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.timer-text {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 2px;
+  letter-spacing: 0.06em;
+}
+
+.timer-colon {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: -6px;
+}
+
 .event-master-overlay .tag {
   background: var(--gold);
   color: var(--navy-dark);
@@ -1626,12 +1756,61 @@ table.data-table td.placeholder {
     font-size: 0.72rem;
   }
 
-  /* ---- EVENTS PAGE: remove ALL hover effects on mobile ---- */
   /* Master card mobile view aspect ratio to fit full portrait poster */
   .event-master-grid .event-master-card-wrap {
     width: 100%;
     aspect-ratio: 1023 / 1537;
     min-height: auto;
+  }
+
+  /* Mobile capsule countdown timer - Ultra-compact height & capsule pill shape */
+  .event-countdown-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 4px 16px;
+    gap: 8px;
+    width: auto;
+    max-width: 96vw;
+    min-width: auto;
+  }
+
+  .event-countdown-container .countdown-label {
+    font-size: 0.65rem;
+    gap: 5px;
+    letter-spacing: 0.05em;
+  }
+
+  .event-countdown-container .pulse-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .event-countdown-container .countdown-timer-box {
+    gap: 4px;
+  }
+
+  .event-countdown-container .timer-unit {
+    min-width: auto;
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    border: none;
+  }
+
+  .event-countdown-container .timer-number {
+    font-size: 0.95rem;
+  }
+
+  .event-countdown-container .timer-text {
+    font-size: 0.48rem;
+    margin-top: 0px;
+  }
+
+  .event-countdown-container .timer-colon {
+    font-size: 0.85rem;
+    margin-top: -3px;
   }
   .event-master-card {
     width: 100%;
