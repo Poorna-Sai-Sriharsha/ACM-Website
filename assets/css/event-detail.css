@@ -133,6 +133,25 @@
 
   .event-detail-sidebar {
     order: -1;
+    position: static !important;
+    top: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: min(340px, 100%) !important;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 16px !important;
+  }
+
+  .sidebar-box {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: min(340px, 100%) !important;
+    box-sizing: border-box;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -418,9 +437,10 @@
 .event-detail-sidebar {
   position: sticky;
   top: 90px;
+  align-self: start;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   width: 100%;
   max-width: 280px;
   box-sizing: border-box;
@@ -621,9 +641,9 @@
   height: auto !important;
   max-height: 420px !important;
   width: 100% !important;
-  max-width: 340px !important;
+  max-width: min(340px, 100%) !important;
   object-fit: contain !important;
-  margin: 0 auto 16px auto !important;
+  margin: 0 auto !important;
 }
 
 .sidebar-box p {
