@@ -239,11 +239,13 @@
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+  align-items: flex-start;
   margin-top: 16px;
 }
 
 .coord-col {
   flex: 1 1 240px;
+  height: fit-content;
   background: #f8fafc;
   border: 1px solid rgba(6, 25, 56, 0.08);
   border-left: 4px solid var(--blue);
