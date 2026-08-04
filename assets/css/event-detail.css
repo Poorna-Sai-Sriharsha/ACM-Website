@@ -198,7 +198,7 @@
   font-size: 1.4rem;
   font-family: var(--font-body);
   font-weight: 700;
-  color: var(--navy);
+  color: #000000;
   margin: 24px 0 12px;
 }
 
@@ -238,7 +238,7 @@
 }
 
 .event-section-block strong {
-  color: var(--navy);
+  color: #000000;
   font-weight: 700;
 }
 
