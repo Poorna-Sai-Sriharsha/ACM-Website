@@ -328,6 +328,7 @@
   font-weight: 600;
   color: var(--navy);
   margin: 0 !important;
+  line-height: 1.2;
 }
 
 .btn-upload {
@@ -338,14 +339,16 @@
   color: var(--white) !important;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.93rem;
   letter-spacing: 0.03em;
-  padding: 14px 38px;
-  border-radius: 8px;
+  padding: 8px 24px;
+  margin-left: 1.5%;
+  margin-top: -4px;
+  border-radius: 50px;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 6px 20px rgba(20, 80, 158, 0.28);
+  box-shadow: 0 4px 16px rgba(20, 80, 158, 0.28);
   transition: all 0.25s ease;
 }
 
