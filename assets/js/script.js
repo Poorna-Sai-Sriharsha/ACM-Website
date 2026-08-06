@@ -66,6 +66,16 @@ document.addEventListener('DOMContentLoaded', function () {
   var subView = document.getElementById('events-sub-view');
   var subViewTitle = document.getElementById('sub-view-title');
 
+  function refreshMarquees(container) {
+    if (!container) return;
+    setTimeout(function () {
+      container.querySelectorAll('marquee').forEach(function (m) {
+        var clone = m.cloneNode(true);
+        m.parentNode.replaceChild(clone, m);
+      });
+    }, 50);
+  }
+
   function showSubView(title) {
     if (!subView || !masterView) return;
     masterView.style.display = 'none';
@@ -74,6 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var canvas = document.getElementById('tech-nodes-canvas');
     if (canvas) canvas.style.display = 'none';
+
+    refreshMarquees(subView);
   }
 
   function showMasterView() {
@@ -100,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('hashchange', checkHashAndToggle);
     window.addEventListener('popstate', checkHashAndToggle);
     window.addEventListener('pageshow', checkHashAndToggle);
+    window.addEventListener('load', checkHashAndToggle);
 
     masterCards.forEach(function (card) {
       card.addEventListener('click', function () {

@@ -1948,3 +1948,43 @@ table.data-table td.placeholder {
     display: none;
   }
 }
+
+/* ---- Marquee Notice Banner ---- */
+.marquee-notice {
+  background: var(--blue-soft);
+  color: var(--navy);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--blue);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  margin-top: -15px;
+  margin-bottom: 28px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.marquee-notice .notice-badge {
+  background: var(--crimson);
+  color: var(--white);
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.marquee-notice marquee {
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+.acc-details p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
