@@ -1987,4 +1987,32 @@ table.data-table td.placeholder {
   font-size: 1.15rem;
   line-height: 1.5;
 }
+
+/* Capsule Button */
+.capsule-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 22px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+  color: var(--white) !important;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgba(7, 20, 51, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s ease;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+
+.capsule-btn:hover {
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(11, 31, 77, 0.5);
+  color: var(--white) !important;
+}
+
+
 
